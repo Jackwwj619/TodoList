@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalenderSystem</title>
+    <link rel="stylesheet" href="./任务.css">
+</head>
+<body>
+    <div class="top">
+        <a href="#">ALL</a>
+        <a href="#">LIFE</a>
+        <a href="#">STUDY</a>
+        <button type="button">&#8942;</button>
+    </div>
+    <div class="middle">
+        <div id="list">
+                <div class="do-item">
+                    <div class="do-content">
+                        <span>1.唱、跳、rap、打篮球，我家鸽鸽超帅！狂粉！！[_爱心]</span>
+                    </div>
+                    <input type="checkbox" id="checkbox1" class="check-box" />
+                    <label for="checkbox1" class="check-box-label"></label>
+                </div>
+                <!-- 更多的 do-item 可以放在这里 -->
+        </div>
+    </div>
+    <div class="ADDER" style="--clr:lightblue;--i:0;"><span  id="showFormButton">+</span></div>
+    <!-- 下拉列表 -->
+    <div id="popupForm" class="popup-form">
+        <form action="/submit-todo-form" method="post">
+          <label for="todo">To-Do</label>
+          <input type="text" id="todo" name="todo"><br><br>
+          <input type="submit" value="提交">
+        </form>
+      </div>
+      
+    <div id="overlay" class="overlay"></div>
+
+    <div class="bottom">
+        <button>|||</button>
+        <a href="./任务.html">任务</a>
+        <a href="./日历.html">日历</a>
+        <a href="./统计.html">统计</a>
+    </div>
+    <script src="./任务.js"></script>
+</body>
+</html>
