@@ -9,15 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
         contentSpan.style.textDecoration = event.target.checked ? 'line-through' : 'none';
       }
     });
-
-    //监听下拉菜单
-    document.getElementById("showFormButton").addEventListener("click", function() {
-      document.getElementById("popupForm").style.display = "block";
-      document.getElementById("overlay").style.display = "block";
-    });
-    
-    document.getElementById("overlay").addEventListener("click", function() {
-      document.getElementById("popupForm").style.display = "none";
-      document.getElementById("overlay").style.display = "none";
-    });
   });
+
+//监听下拉菜单
+document.getElementById("showFormButton").addEventListener("click", function() {
+  document.getElementById("popupForm").style.display = "block";
+});
+      
+document.getElementById("submit").addEventListener("click", function() {
+  document.getElementById("popupForm").style.display = "none";
+});
