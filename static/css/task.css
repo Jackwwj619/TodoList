@@ -1,0 +1,176 @@
+/*以下部分属于主页面公用部分*/
+body {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+}
+
+/*通知栏*/
+body .top {
+    display: block;
+    width: 400;
+    height: 80px;
+    background-color: #3064bb;
+    position: relative;
+}
+
+body .top a {
+    display: inline-block;
+    width: 200px;
+    height: 80px;
+    background-color: #3064bb;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 80px;
+    font-size: 18px;
+}
+
+body .top a:hover {
+    background-color: #608dd9;
+}
+
+body .top button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    margin: left auto;
+    width: 50px;
+    height: 80px;
+    background-color: #3064bb;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+body .top button:hover {
+    background-color: #608dd9;
+}
+
+
+/*底边栏*/
+body .bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 400;
+    height: 80px;
+    background-color: #3064bb;
+}
+
+body .bottom a {
+    display: inline-block;
+    width: 200px;
+    height: 80px;
+    background-color: #3064bb;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 80px;
+    font-size: 18px;
+}
+
+body .bottom a:hover {
+    background-color: #608dd9;
+}
+
+body .bottom button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: none;
+    margin: left auto;
+    width: 50px;
+    height: 80px;
+    background-color: #3064bb;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+body .bottom button:hover {
+    background-color: #608dd9;
+}
+
+/*正文*/
+  .do-item {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    position: relative;
+  }
+  
+  .check-box {
+    margin-right: 10px; /* 为复选框和内容之间添加一些间隔 */
+    cursor: pointer;
+  }
+  
+  .do-content {
+    flex-grow: 1;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .check-box:checked ~ .do-content span {
+    text-decoration: line-through;
+  }
+
+/*悬浮部件*/
+.ADDER {
+    position: absolute;
+    display: flex;
+    bottom: 80px;
+    right: 0;
+    margin: 20px;
+    height: 60px;
+    width: 60px;
+    background-color: lightgreen;
+    border: #3064bb 20px 20px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    color: #f0f0f0;
+    transition: 1s;
+}
+.ADDER span{
+    transform: scale(1.8);
+}
+.ADDER:hover {
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 20px var(--clr),
+    0 0 30px var(--clr);
+}
+
+/*下拉列表*/
+.popup-form {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 20px;
+    z-index: 1001;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
