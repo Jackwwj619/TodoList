@@ -20,34 +20,34 @@ public class TaskController {
     @Autowired
     TaskService taskService;
 
-//    @ExceptionHandler(RuntimeException.class)
-//    public ModelAndView handleUnkonwException(Exception ex) {
-//        return new ModelAndView("500.html", Map.of("error", ex.getClass().getSimpleName(), "message", ex.getMessage()));
-//    }
+    @ExceptionHandler(RuntimeException.class)
+    public ModelAndView handleUnkonwException(Exception ex) {
+        return new ModelAndView("500.html", Map.of("error", ex.getClass().getSimpleName(), "message", ex.getMessage()));
+    }
 
 
-//    public ModelAndView index(HttpSession session) {
-//        Map<String, Object> model = Map.of("tasks", taskService.getAllTasks());
-//        return new ModelAndView("task.html", model);
-//    }
-//
-//    @PostMapping("/add")
-//    public ModelAndView addTask(@RequestParam("title")String title, @RequestParam("description")String description, @RequestParam("dueDate") LocalDate dueDate) {
-//        try {
-//            taskService.addTask(title, description, dueDate);
-//        } catch (RuntimeException e) {
-//            return new ModelAndView("task.html", Map.of("error", "Add task failed."));
-//        }
-//        return new ModelAndView("redirect:/task");
-//    }
-//
-//    @GetMapping("calender")
-//    public ModelAndView calender() {
-//        return new ModelAndView("calender.html");
-//    }
-//
-//    @GetMapping("stati")
-//    public ModelAndView stati() {
-//        return new ModelAndView("stati.html");
-//    }
+    public ModelAndView index(HttpSession session) {
+        Map<String, Object> model = Map.of("tasks", taskService.getAllTasks());
+        return new ModelAndView("task.html", model);
+    }
+
+    @PostMapping("/add")
+    public ModelAndView addTask(@RequestParam("title")String title, @RequestParam("description")String description, @RequestParam("dueDate") LocalDate dueDate) {
+        try {
+            taskService.addTask(title, description, dueDate);
+        } catch (RuntimeException e) {
+            return new ModelAndView("task.html", Map.of("error", "Add task failed."));
+        }
+        return new ModelAndView("redirect:/task");
+    }
+
+    @GetMapping("calender")
+    public ModelAndView calender() {
+        return new ModelAndView("calender.html");
+    }
+
+    @GetMapping("stati")
+    public ModelAndView stati() {
+        return new ModelAndView("stati.html");
+    }
 }
