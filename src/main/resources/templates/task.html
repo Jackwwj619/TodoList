@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalenderSystem</title>
+    <link rel="stylesheet" href="../static/css/task.css">
+    <script src="../static/js/vue.js"></script>
+</head>
+<body>
+    <div class="top">
+        <a href="#">ALL</a>
+        <a href="#">LIFE</a>
+        <a href="#">STUDY</a>
+        <button type="button">&#8942;</button>
+    </div>
+    <div class="middle">
+        <!-- 已废弃代码 -->
+        <!-- <div id="list">
+            <div class="do-item">
+                <div class="do-content">
+                    <span>1.唱、跳、rap、打篮球，我家鸽鸽超帅！狂粉！！[_爱心]</span>
+                </div>
+                <label for="checkbox1" class="check-box-label"></label><input type="checkbox" id="checkbox1" class="check-box" /></label>
+            </div>
+        </div> -->
+        <div id="app">
+            <!-- To-Do 表单 -->
+            <div id="popupForm" class="popup-form">
+                <form @submit.prevent="submitTask" @reset="resetForm">
+                    <label for="todo">To-Do</label>
+                    <input type="text" id="todo" name="todo" v-model="newTaskContent"><br><br>
+                    <input type="reset" value="重置">
+                    <input type="submit" value="提交" id="submit">
+                </form>
+            </div>
+        
+            <!-- 任务列表 -->
+            <div id="list">
+                <div v-if="tasks.length === 0">
+                    当前没有任务。
+                </div>
+                <div class="do-item" v-for="(task, index) in tasks" :key="index">
+                    <div class="do-content">
+                        <span>{{ task.content }}</span>
+                    </div>
+                    <label :for="'checkbox' + index" class="check-box-label"></label>
+                    <input type="checkbox" :id="'checkbox' + index" class="check-box" v-model="task.done" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ADDER" style="--clr:lightblue;--i:0;"><span  id="showFormButton">+</span></div>
+    <!-- 已废弃代码 -->
+    <!-- 下拉列表 -->
+    <!-- <div id="popupForm" class="popup-form">
+        <form action="http://localhost:8080/tasks" method="post">
+          <label for="todo">To-Do<input type="text" id="todo" name="todo"></label><br><br>
+          <label for="tag">Tag<input type="text" id="tag" name="tag"></label><br><br>
+          <input type="reset" value="重置">
+          <input type="submit" value="提交" id="submit">
+        </form>
+    </div> -->
+
+    <div class="bottom">
+        <button>|||</button>
+        <a href="./task.html">任务</a>
+        <a href="calender.html">日历</a>
+        <a href="stati.html">统计</a>
+    </div>
+    <script src="./task.js"></script>
+</body>
+</html>
